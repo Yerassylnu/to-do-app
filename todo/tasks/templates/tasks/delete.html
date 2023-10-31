@@ -1,8 +1,15 @@
-<p>Are you sure you want to delete "{{ item }}"?</p>
+{% load static %}
 
-<a href="{% url 'list' %}">Cancel</a>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 
-<form method="POST" action="">
-    {% csrf_token %}
-    <input type="submit" name="Confirm">
-</form>
+<div class="center-column">
+    <p>Are you sure you want to delete "{{ item }}"?</p>
+
+    <a class="btn btn-warning" href="{% url 'list' %}">Cancel</a>
+
+    <form method="POST" action="">
+        {% csrf_token %}
+        <input class="btn btn-danger" type="submit" name="Confirm">
+    </form>
+</div>
